@@ -27,15 +27,39 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata = {
-  title: "M.A.G ENERGY — Power Generation & Wholesale Supply, Juba, South Sudan",
+  title: "M.A.G ENERGY | Power Generation & Energy Solutions in South Sudan",
   description:
-    "M.A.G ENERGY generates electricity in Juba, South Sudan and supplies it wholesale to local distribution partners, building a more reliable grid for the country.",
+    "M.A.G ENERGY provides power generation, electricity supply, and energy infrastructure solutions in Juba and across South Sudan.",
+  keywords: [
+    "M.A.G ENERGY",
+    "MAG ENERGY",
+    "M.A.G Energy South Sudan",
+    "energy company South Sudan",
+    "electricity South Sudan",
+    "power generation South Sudan",
+    "electricity Juba",
+    "solar energy South Sudan",
+    "energy infrastructure South Sudan",
+  ],
+  verification: {
+    google: "91ZMReTX-MUEnEyUnn0Uk8XC0FgAY-S4-2qz_8F4Jps",
+  },
+  openGraph: {
+    title: "M.A.G ENERGY | Power Generation & Energy Solutions",
+    description:
+      "Reliable power generation and energy infrastructure solutions for South Sudan.",
+    type: "website",
+    locale: "en_US",
+    siteName: "M.A.G ENERGY",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${fraunces.variable} ${workSans.variable} ${spaceMono.variable}`}>
+      <body
+        className={`${fraunces.variable} ${workSans.variable} ${spaceMono.variable}`}
+      >
         <Header />
         {children}
         <Footer />
