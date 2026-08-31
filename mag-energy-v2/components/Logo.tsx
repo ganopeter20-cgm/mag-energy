@@ -1,4 +1,4 @@
-export default function Logo() {
+export default function Logo(): JSX.Element {
   return (
     <svg className="brand-mark" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <circle cx="15" cy="15" r="6" fill="none" stroke="#ff7a3d" strokeWidth="1.6" />

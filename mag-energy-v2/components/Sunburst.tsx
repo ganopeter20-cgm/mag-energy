@@ -1,7 +1,7 @@
 const RAYS_OUTER = 16;
 const RAYS_INNER = 10;
 
-export default function Sunburst() {
+export default function Sunburst(): JSX.Element {
   return (
     <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <circle cx="300" cy="300" r="280" fill="none" stroke="rgba(250,243,230,0.08)" strokeWidth="1" />
