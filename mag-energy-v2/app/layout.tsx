@@ -1,8 +1,9 @@
+import type { Metadata } from "next";
 import { Fraunces, Work_Sans, Space_Mono } from "next/font/google";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ClientEffects from "../components/ClientEffects";
-import "./globals.css";
+import "./globals.tailwind.css";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -26,7 +27,7 @@ const spaceMono = Space_Mono({
   display: "swap",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "M.A.G ENERGY | Power Generation & Energy Solutions in South Sudan",
   description:
     "M.A.G ENERGY provides power generation, electricity supply, and energy infrastructure solutions in Juba and across South Sudan.",
@@ -54,12 +55,10 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body
-        className={`${fraunces.variable} ${workSans.variable} ${spaceMono.variable}`}
-      >
+      <body className={`${fraunces.variable} ${workSans.variable} ${spaceMono.variable}`}>
         <Header />
         {children}
         <Footer />
