@@ -4,6 +4,13 @@ const RAYS_INNER = 10;
 export default function Sunburst(): JSX.Element {
   return (
     <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <style>{`
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes rayPulse { 0%,100% { opacity: 0.25 } 50% { opacity: 0.85 } }
+        .burst-slow { animation: spin 60s linear infinite; transform-origin: center; }
+        .burst-fast { animation: spin 34s linear infinite reverse; transform-origin: center; }
+        .burst-ray { animation: rayPulse 3.6s ease-in-out infinite; }
+      `}</style>
       <circle cx="300" cy="300" r="280" fill="none" stroke="rgba(250,243,230,0.08)" strokeWidth="1" />
       <circle cx="300" cy="300" r="220" fill="none" stroke="rgba(250,243,230,0.1)" strokeWidth="1" />
 
