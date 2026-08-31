@@ -33,25 +33,26 @@ export default function StatRings({ stats }) {
   }, []);
 
   return (
-    <div className="stat-rings" ref={rowRef}>
+    <div className="grid grid-cols-4 gap-8" ref={rowRef}>
       {stats.map((s) => {
         const offset = CIRCUMFERENCE * (1 - s.pct);
         return (
-          <div className="stat-ring-item" key={s.label} style={{ "--ring-offset": offset }}>
-            <svg viewBox="0 0 128 128">
-              <circle className="ring-track" cx="64" cy="64" r="55" />
+          <div className="text-center" key={s.label} style={{ "--ring-offset": offset }}>
+            <svg viewBox="0 0 128 128" className="w-32 h-32 mx-auto">
+              <circle className="fill-none stroke-line-dark stroke-[5]" cx="64" cy="64" r="55" />
               <circle
-                className="ring-fill"
+                className="fill-none stroke-sun stroke-[5] stroke-linecap-round transition-all duration-1400"
                 cx="64"
                 cy="64"
                 r="55"
                 transform="rotate(-90 64 64)"
+                style={{ strokeDasharray: CIRCUMFERENCE, strokeDashoffset: CIRCUMFERENCE }}
               />
-              <text className="ring-num" x="64" y="70" textAnchor="middle">
+              <text className="font-display text-xl fill-cream" x="64" y="70" textAnchor="middle">
                 {s.value}
               </text>
             </svg>
-            <div className="stat-ring-label">{s.label}</div>
+            <div className="mt-3.5 font-mono text-xs tracking-tight uppercase text-paper-dim">{s.label}</div>
           </div>
         );
       })}

@@ -33,14 +33,16 @@ export default function PowerTimeline({ steps }) {
   }, [steps.length]);
 
   return (
-    <div className="power-timeline">
-      <div className="power-timeline-rail" ref={railRef}></div>
-      <div className="power-timeline-fill" style={{ height: `${fillPct}%` }}></div>
+    <div className="relative max-w-2xl mx-auto">
+      <div className="absolute left-6 top-1.5 bottom-1.5 w-0.5 bg-line-dark" ref={railRef}></div>
+      <div className="absolute left-6 top-1.5 w-0.5 bg-gradient-to-b from-sun to-gold transition-all" style={{ height: `${fillPct}%` }}></div>
       {steps.map((s, i) => (
-        <div key={s.step} className={`pt-step${i <= activeIndex ? " is-active" : ""}`}>
-          <div className="pt-dot">{s.step}</div>
-          <h3>{s.title}</h3>
-          <p>{s.body}</p>
+        <div key={s.step} className={`relative pb-16 pl-16 ${i <= activeIndex ? "is-active" : ""}`}>
+          <div className="absolute left-3 top-0.5 w-5 h-5 rounded-full bg-night border-2 border-line-dark flex items-center justify-center font-mono text-xs text-paper-dim transition-all duration-300" style={i <= activeIndex ? { borderColor: '#ff7a3d', backgroundColor: '#ff7a3d', color: '#1c1526' } : {}}>
+            {s.step}
+          </div>
+          <h3 className="text-xl mb-2.5">{s.title}</h3>
+          <p className="text-sm text-paper-dim max-w-sm">{s.body}</p>
         </div>
       ))}
     </div>

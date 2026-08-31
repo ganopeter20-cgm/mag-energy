@@ -3,11 +3,11 @@ const RAYS_INNER = 10;
 
 export default function Sunburst() {
   return (
-    <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="absolute inset-0 w-full h-full">
       <circle cx="300" cy="300" r="280" fill="none" stroke="rgba(250,243,230,0.08)" strokeWidth="1" />
       <circle cx="300" cy="300" r="220" fill="none" stroke="rgba(250,243,230,0.1)" strokeWidth="1" />
 
-      <g className="burst-slow">
+      <g className="animate-spin" style={{ transformOrigin: "center" }}>
         {Array.from({ length: RAYS_OUTER }).map((_, i) => {
           const angle = (i * 360) / RAYS_OUTER;
           return (
@@ -20,7 +20,7 @@ export default function Sunburst() {
               stroke="#ff7a3d"
               strokeWidth="2"
               strokeLinecap="round"
-              className="burst-ray"
+              className="animate-pulse-custom"
               opacity="0.5"
               style={{
                 transformOrigin: "300px 300px",
@@ -32,7 +32,7 @@ export default function Sunburst() {
         })}
       </g>
 
-      <g className="burst-fast">
+      <g className="animate-spin-reverse" style={{ transformOrigin: "center" }}>
         {Array.from({ length: RAYS_INNER }).map((_, i) => {
           const angle = (i * 360) / RAYS_INNER;
           return (

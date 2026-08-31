@@ -20,21 +20,29 @@ export default function ContactForm() {
 
   return (
     <form id="contact-form" noValidate onSubmit={handleSubmit}>
-      <div className="field">
-        <label htmlFor="name">Full name</label>
-        <input type="text" id="name" name="name" required />
+      <div className="mb-5">
+        <label htmlFor="name" className="block font-mono text-xs tracking-wider uppercase mb-2 text-ink-dim">
+          Full name
+        </label>
+        <input type="text" id="name" name="name" className="w-full bg-cream border border-line-light rounded-lg px-3.5 py-3 font-body text-sm text-ink focus:outline-none focus:border-sun transition-colors duration-200" required />
       </div>
-      <div className="field">
-        <label htmlFor="company">Company / organisation</label>
-        <input type="text" id="company" name="company" />
+      <div className="mb-5">
+        <label htmlFor="company" className="block font-mono text-xs tracking-wider uppercase mb-2 text-ink-dim">
+          Company / organisation
+        </label>
+        <input type="text" id="company" name="company" className="w-full bg-cream border border-line-light rounded-lg px-3.5 py-3 font-body text-sm text-ink focus:outline-none focus:border-sun transition-colors duration-200" />
       </div>
-      <div className="field">
-        <label htmlFor="email">Email address</label>
-        <input type="email" id="email" name="email" required />
+      <div className="mb-5">
+        <label htmlFor="email" className="block font-mono text-xs tracking-wider uppercase mb-2 text-ink-dim">
+          Email address
+        </label>
+        <input type="email" id="email" name="email" className="w-full bg-cream border border-line-light rounded-lg px-3.5 py-3 font-body text-sm text-ink focus:outline-none focus:border-sun transition-colors duration-200" required />
       </div>
-      <div className="field">
-        <label htmlFor="reason">I&apos;m getting in touch about</label>
-        <select id="reason" name="reason" defaultValue="Distribution / wholesale supply">
+      <div className="mb-5">
+        <label htmlFor="reason" className="block font-mono text-xs tracking-wider uppercase mb-2 text-ink-dim">
+          I&apos;m getting in touch about
+        </label>
+        <select id="reason" name="reason" className="w-full bg-cream border border-line-light rounded-lg px-3.5 py-3 font-body text-sm text-ink focus:outline-none focus:border-sun transition-colors duration-200" defaultValue="Distribution / wholesale supply">
           <option>Distribution / wholesale supply</option>
           <option>General enquiry</option>
           <option>Careers</option>
@@ -42,18 +50,20 @@ export default function ContactForm() {
           <option>Other</option>
         </select>
       </div>
-      <div className="field">
-        <label htmlFor="message">Message</label>
-        <textarea id="message" name="message" required></textarea>
+      <div className="mb-5">
+        <label htmlFor="message" className="block font-mono text-xs tracking-wider uppercase mb-2 text-ink-dim">
+          Message
+        </label>
+        <textarea id="message" name="message" className="w-full bg-cream border border-line-light rounded-lg px-3.5 py-3 font-body text-sm text-ink resize-vertical min-h-[110px] focus:outline-none focus:border-sun transition-colors duration-200" required></textarea>
       </div>
-      <button type="submit" className="btn btn-primary">
-        Send Message <span className="btn-arrow">&rarr;</span>
+      <button type="submit" className="inline-flex items-center gap-2.5 px-6 py-4 rounded-full font-body font-semibold text-sm border border-transparent bg-sun text-ink hover:-translate-y-0.5 transition-all duration-250">
+        Send Message <span className="inline-block transition-transform duration-250">&rarr;</span>
       </button>
-      <p className="form-note">
+      <p className="text-xs text-ink-dim mt-4">
         This form is a front-end demo only. Connect it to a form backend (Formspree, Netlify Forms, or your
         own API route) in components/ContactForm.js to actually receive submissions.
       </p>
-      <div className={`form-success${submitted ? " is-visible" : ""}`}>
+      <div className={`hidden mt-4.5 px-4 py-3.5 rounded-lg bg-teal bg-opacity-14 border border-teal border-opacity-40 text-sm ${submitted ? "block" : ""}`}>
         Thanks &mdash; your message has been recorded. Our team will follow up shortly.
       </div>
     </form>

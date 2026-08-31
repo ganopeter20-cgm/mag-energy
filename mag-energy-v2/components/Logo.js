@@ -1,6 +1,6 @@
 export default function Logo() {
   return (
-    <svg className="brand-mark" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <svg className="w-8 h-8 flex-none" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <circle cx="15" cy="15" r="6" fill="none" stroke="#ff7a3d" strokeWidth="1.6" />
       <g stroke="#ffbe55" strokeWidth="1.4" strokeLinecap="round">
         <line x1="15" y1="2" x2="15" y2="6" />
