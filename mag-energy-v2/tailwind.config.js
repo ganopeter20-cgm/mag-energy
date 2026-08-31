@@ -17,13 +17,19 @@ module.exports = {
         sun: '#ff7a3d',
         gold: '#ffbe55',
         teal: '#2fa89c',
-        'line-dark': 'rgba(250,243,230,0.14)',
-        'line-light': 'rgba(28,21,38,0.12)'
+        'line-on-dark': 'rgba(250,243,230,0.14)',
+        'line-on-light': 'rgba(28,21,38,0.12)'
       },
       fontFamily: {
         display: ['var(--font-display)'],
         body: ['var(--font-body)'],
         mono: ['var(--font-mono)']
+      },
+      maxWidth: {
+        container: '1240px'
+      },
+      spacing: {
+        pad: 'clamp(20px, 4vw, 64px)'
       },
       screens: {
         'sm': '560px',
